@@ -80,9 +80,9 @@ func (u Universe) String() string {
 
 	for y := 0; y < height; y++ {
 		for x := 0; x < width; x++ {
-			b = '湜'
+			b = ' '
 			if u[y][x] {
-				b = '🟥'
+				b = '☀'
 			}
 			buf = append(buf, b)
 		}
