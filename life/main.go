@@ -7,8 +7,8 @@ import (
 )
 
 const (
-	width  = 60
-	height = 60
+	width  = 200
+	height = 50
 )
 
 const (
@@ -36,7 +36,7 @@ func NewUniverse() Universe {
 
 // Seed заполняет вселенную случайными живыми клетками.
 func (u Universe) Seed() {
-	for i := 0; i < (width * height / 3); i++ {
+	for i := 0; i < (width * height / 4); i++ {
 		u.Set(rand.Intn(width), rand.Intn(height), true)
 	}
 }
@@ -94,7 +94,7 @@ func (u Universe) String() string {
 
 // Show очищает экран и возвращает вселенную.
 func (u Universe) Show() {
-	fmt.Print("\033[H\033[2J", colorBlue, u.String(), colorReset)
+	fmt.Print("\033[H\033[2J", colorGreen, u.String(), colorReset)
 }
 
 // Step обновляет состояние следующей вселенной (b) из
